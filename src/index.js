@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createOvermind } from 'overmind'
+import { config } from './overmind'
+import { createHook, Provider } from "overmind-react";
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const overmind = createOvermind(config)
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider value={overmind}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

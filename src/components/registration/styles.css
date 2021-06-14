@@ -1,0 +1,36 @@
+.reg-form {
+    background: #9ec2eb;
+    text-align: center;
+    padding: 16px;
+    margin: 8px;
+    display: inline-block;
+    width: 80%;
+    vertical-align: middle;
+}
+.reg-form-first-name,
+.reg-form-last-name,
+.reg-form-email,
+.reg-form-username,
+.reg-form-password,
+.login-form-birth-date,
+.reg-form-gender {
+    width: 60%;
+    height: 30px;
+    margin: 20px;
+}
+.reg-form-submit {
+    display: block;
+}
+.reg-form-button {
+    background-color: #0b83d3;
+    margin: 20px;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+/* .reg-form-label {
+    display: block;
+    text-align: left;
+    margin: 0;
+} */

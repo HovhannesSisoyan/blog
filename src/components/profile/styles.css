@@ -1,0 +1,18 @@
+.profile {
+    text-align: left;
+}
+
+.profile-list {
+    list-style: none;
+}
+.profile-list-value {
+    text-align: right;
+}
+
+.logout-button {
+    width: 80px;
+    height: 40px;
+    background-color: #0b83d3;
+    margin: 20px;
+    border-radius: 5px;
+}

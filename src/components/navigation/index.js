@@ -25,6 +25,9 @@ const Navigation = () => {
                 <li className="navigation-list-item">
                 <Link to="/posts" className="navigation-list-item-link">All Posts </Link>
                 </li>
+                {isLoggedIn && (<li className="navigation-list-item">
+                <Link to="/new-post" className="navigation-list-item-link"> New Post </Link>
+                </li>)}
                 {isLoggedIn && (<li className="navigation-list-item" onClick={() => history.push('/profile')}>
                 <img src="https://blog-project-images.s3.us-east-2.amazonaws.com/user/user.png"  width="40" height="40"/>
                 <span className="navigation-list-item-text">{`Hi ${firstName} !`}</span>

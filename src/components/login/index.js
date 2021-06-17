@@ -27,7 +27,7 @@ export const Login = () => {
             },
             redirect: 'follow',
             referrerPolicy: 'no-referrer',
-            body: JSON.stringify({"EmailOrUsername": emailOrUsername, "Password": password})
+            body: JSON.stringify({ "EmailOrUsername": emailOrUsername, "Password": password })
           })
           .then(res => res.json())
           .then(res =>  {

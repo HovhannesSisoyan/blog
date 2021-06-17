@@ -5,6 +5,9 @@ import './styles.css';
 
 const Registration = () => {
 
+    const [regInProgress, setRegInProgress] = useState(false);
+    const [regFinished, setRegFinished] = useState(false);
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -16,6 +19,7 @@ const Registration = () => {
 
     const handleSubmit = async event => {
         event.preventDefault();
+        setRegInProgress(true);
         await fetch('https://localhost:5001/register', {
             method: 'POST',
             mode: 'cors',
@@ -36,16 +40,21 @@ const Registration = () => {
                 "Gender": gender == 1 ? true : false,
             })
           })
-        //   .then(res => res.json())
           .then(res => { if(res.ok) {
-            history.push('/');
+            setTimeout(() => {
+                history.push('/login');
+            }, 3000);
+            setRegInProgress(false);
             return res.json();
           }})
-          .catch(err => console.log(err))
+          .catch(err => { setRegFinished(true); console.log(err)})
     }
 
     return (
-        <div className="reg-form">
+            regInProgress ? (
+                <h1> Registering.... </h1>
+            ) : !regFinished ? (
+                <div className="reg-form">
             <form>
                 <input type="text" 
                     className="reg-form-first-name" 
@@ -98,6 +107,7 @@ const Registration = () => {
                 </div>
             </form>
         </div>
+        ) : (<h1>Something went wrong!</h1>)
     )
 }
 

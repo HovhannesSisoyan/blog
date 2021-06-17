@@ -7,6 +7,7 @@ import HomePage from './components/homePage';
 import Login from './components/login';
 import Posts from './components/posts';
 import Profile from './components/profile';
+import NewPost from './components/newPost';
 import Navigation from './components/navigation';
 import Registration from './components/registration';
 
@@ -52,6 +53,7 @@ export const Routes = () => {
                     { !isLoggedIn && <Route exact path="/login" component={Login} /> }
                     { !isLoggedIn &&<Route exact path="/register" component={Registration} /> }
                     { isLoggedIn &&<Route exact path="/profile" component={Profile} /> }
+                    { isLoggedIn &&<Route exact path="/new-post" component={NewPost} /> }
                 </Switch>
             </Router>
         </>
